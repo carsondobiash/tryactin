@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { makeStyles } from '@material-ui/core/styles';
+import Home from "./pages/Home"
+import ShopWomen from "./pages/ShopWomen";
+import ShopMen from "./pages/ShopMen";
+import Cart from "./pages/Cart";
+import Account from "./pages/Account";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  }
+}));
 
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" render={(props) => <Home {...props}/>}/>
+          <Route path="/men" render={(props) => <ShopMen {...props}/>}/>
+          <Route path="/women" render={(props) => <ShopWomen {...props}/>}/>
+          <Route path="/cart" render={(props) => <Cart {...props}/>}/>
+          <Route path="/account" render={(props) => <Account {...props}/>}/>
+        </Switch>
+      </Router>
   );
 }
 
