@@ -54,7 +54,7 @@ function Home (props) {
                             <Card square={true}>
                                 <CardMedia
                                     className={classes.jumbotron}
-                                    image={require("../images/workoutSplash0.jpg")}
+                                    image={require("../images/workoutSplash.jpg")}
                                     title={"Workout Splash"}
                                 />
                             </Card>
@@ -64,7 +64,7 @@ function Home (props) {
                         <Card className={classes.card}>
                             <CardMedia
                                 className={classes.cardMedia}
-                                image={require("../images/ShopMen0.jpg")}
+                                image={require("../images/ShopMen.jpg")}
                                 title={"Shop Men"}
                             />
                             <CardContent>
@@ -81,7 +81,7 @@ function Home (props) {
                         <Card className={classes.card}>
                             <CardMedia
                                 className={classes.cardMedia}
-                                image={require("../images/ShopWomen0.jpg")}
+                                image={require("../images/ShopWomen.jpg")}
                                 title={"Shop Women"}
                             />
                             <CardContent>
@@ -105,7 +105,7 @@ function Home (props) {
                         <Card className={classes.card}>
                             <CardMedia
                                 className={classes.cardMedia}
-                                image={require("../images/ShopWomen0.jpg")}
+                                image={require("../images/ShopWomen.jpg")}
                                 title={"Shop Women"}
                             />
                             <CardContent>
@@ -122,7 +122,7 @@ function Home (props) {
                         <Card className={classes.card}>
                             <CardMedia
                                 className={classes.cardMedia}
-                                image={require("../images/ShopWomen0.jpg")}
+                                image={require("../images/ShopWomen.jpg")}
                                 title={"Shop Women"}
                             />
                             <CardContent>
@@ -139,7 +139,7 @@ function Home (props) {
                         <Card className={classes.card}>
                             <CardMedia
                                 className={classes.cardMedia}
-                                image={require("../images/ShopWomen0.jpg")}
+                                image={require("../images/ShopWomen.jpg")}
                                 title={"Shop Women"}
                             />
                             <CardContent>
