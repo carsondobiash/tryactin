@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         height:800
     },
     cardMedia: {
-        height: 350
+        height: 400
     },
     cardDiv: {
         marginBottom: "40px"
@@ -29,8 +29,14 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Bebas Neue"
     },
     subtext: {
-        fontFamily: "Oswald",
+        fontFamily: "Barlow Condensed",
         fontSize: '1em'
+    },
+    spacer: {
+        margin: "40px",
+    },
+    card: {
+        border: "solid 1px gray",
     },
     toolbar: theme.mixins.toolbar
 }));
@@ -48,17 +54,17 @@ function Home (props) {
                             <Card square={true}>
                                 <CardMedia
                                     className={classes.jumbotron}
-                                    image={require("../images/workoutSplash.jpg")}
+                                    image={require("../images/workoutSplash0.jpg")}
                                     title={"Workout Splash"}
                                 />
                             </Card>
                         </div>
-                    </Grid>
+                </Grid>
                     <Grid item xs={5}>
-                        <Card>
+                        <Card className={classes.card}>
                             <CardMedia
                                 className={classes.cardMedia}
-                                image={require("../images/workoutSplash.jpg")}
+                                image={require("../images/ShopMen0.jpg")}
                                 title={"Shop Men"}
                             />
                             <CardContent>
@@ -72,10 +78,10 @@ function Home (props) {
                         </Card>
                     </Grid>
                     <Grid item xs={5}>
-                        <Card>
+                        <Card className={classes.card}>
                             <CardMedia
                                 className={classes.cardMedia}
-                                image={require("../images/workoutSplash.jpg")}
+                                image={require("../images/ShopWomen0.jpg")}
                                 title={"Shop Women"}
                             />
                             <CardContent>
@@ -84,10 +90,68 @@ function Home (props) {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button className={classes.buttonLeft + " " + classes.subtext} href={"/women"}><ChevronLeftIcon/>Find out more</Button>
+                                <Button className={classes.buttonLeft + " " + classes.subtext} href={"/women"}><ChevronLeftIcon/> Find out more</Button>
                             </CardActions>
                         </Card>
                     </Grid>
+
+                    {/********************
+                           NEXT ROW
+                    **********************/}
+                    {/*<Grid item xs={12}>
+                        <div className={classes.spacer}/>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Card className={classes.card}>
+                            <CardMedia
+                                className={classes.cardMedia}
+                                image={require("../images/ShopWomen0.jpg")}
+                                title={"Shop Women"}
+                            />
+                            <CardContent>
+                                <Typography className={classes.cardText} variant={"h4"}>
+                                    SOMETHING
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button className={classes.subtext} href={"/women"}>Find out more <ChevronRightIcon/></Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Card className={classes.card}>
+                            <CardMedia
+                                className={classes.cardMedia}
+                                image={require("../images/ShopWomen0.jpg")}
+                                title={"Shop Women"}
+                            />
+                            <CardContent>
+                                <Typography className={classes.cardText} variant={"h4"}>
+                                    SOMETHING MORE
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button className={classes.subtext} href={"/women"}>Find out more <ChevronRightIcon/></Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Card className={classes.card}>
+                            <CardMedia
+                                className={classes.cardMedia}
+                                image={require("../images/ShopWomen0.jpg")}
+                                title={"Shop Women"}
+                            />
+                            <CardContent>
+                                <Typography className={classes.cardText} variant={"h4"}>
+                                    UHHHH
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button className={classes.subtext} href={"/women"}>Find out more <ChevronRightIcon/></Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>*/}
                 </Grid>
             </div>
             <Footer/>

@@ -12,7 +12,12 @@ const useStyles = makeStyles((theme) => ({
     menuButton: {
         color: "#fff",
         fontFamily: "Bebas Neue",
-        fontSize: '1.4em'
+        fontSize: '1.4em',
+        margin: "5px",
+        borderRadius: "0px",
+        "&:hover": {
+            borderBottom: "3px white solid"
+        }
     },
     title: {
         display:"inline",
@@ -50,11 +55,9 @@ function NavBar() {
                             </Button>
                         </Grid>
                         <Grid container item xs={4} justify={"center"}>
-                            <ButtonGroup>
-                                <Button className={classes.menuButton} href={"/men"}>Mens</Button>
-                                <Button className={classes.menuButton} href={"/women"}>Womens</Button>
-                                <Button className={classes.menuButton}>Kids</Button>
-                            </ButtonGroup>
+                            <Button className={classes.menuButton} href={"/men"}>Mens</Button>
+                            <Button className={classes.menuButton} href={"/women"}>Womens</Button>
+                            <Button className={classes.menuButton}>Gear</Button>
                         </Grid>
                         <Grid container item xs={4} justify={"flex-end"}>
                             <ButtonGroup>
