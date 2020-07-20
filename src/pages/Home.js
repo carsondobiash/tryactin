@@ -90,7 +90,7 @@ function Home (props) {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button className={classes.buttonLeft + " " + classes.subtext} href={"/women"}><ChevronLeftIcon/> Find out more</Button>
+                                <Button className={classes.buttonLeft + " " + classes.subtext} href={"/women"}>Find out more <ChevronRightIcon/></Button>
                             </CardActions>
                         </Card>
                     </Grid>
