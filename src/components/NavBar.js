@@ -15,8 +15,9 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.4em',
         margin: "5px",
         borderRadius: "0px",
+        border: "3px #000 solid",
         "&:hover": {
-            borderBottom: "3px white solid"
+            borderBottom: "3px #ff7800 solid"
         }
     },
     title: {
@@ -26,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     },
     nav: {
         backgroundColor: "#000",
+    },
+    titleIcon: {
+        color: "#ff7800",
     },
     icon: {
         display:"inline",
@@ -48,16 +52,16 @@ function NavBar() {
                     <Grid container alignItems={"center"}>
                         <Grid item xs={4} justify={"flex-start"}>
                             <Button href={"/"}>
-                                <FitnessCenter className={classes.icon}/>
+                                <FitnessCenter className={classes.titleIcon}/>
                                 <Typography variant={"h4"} className={classes.title} >
                                     TRYACTIN
                                 </Typography>
                             </Button>
                         </Grid>
                         <Grid container item xs={4} justify={"center"}>
-                            <Button className={classes.menuButton} href={"/men"}>Mens</Button>
-                            <Button className={classes.menuButton} href={"/women"}>Womens</Button>
-                            <Button className={classes.menuButton}>Gear</Button>
+                            <Button className={classes.menuButton} disableElevation href={"/men"}>Mens</Button>
+                            <Button className={classes.menuButton} disableElevation href={"/women"}>Womens</Button>
+                            <Button className={classes.menuButton} disableElevation>Gear</Button>
                         </Grid>
                         <Grid container item xs={4} justify={"flex-end"}>
                             <ButtonGroup>

@@ -13,9 +13,6 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         marginTop: "65px"
     },
-    buttonLeft: {
-        marginLeft: "auto",
-    },
     jumbotron: {
         height:800
     },
@@ -26,17 +23,48 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: "40px"
     },
     cardText: {
-        fontFamily: "Bebas Neue"
+        fontFamily: "Bebas Neue",
+        color: "#fff"
     },
     subtext: {
         fontFamily: "Barlow Condensed",
-        fontSize: '1em'
+        color: "#000",
+        margin: "-10px 0px 10px 8px",
+        fontSize: '1em',
+        backgroundColor: "#ff7800",
+        "&:hover": {
+            backgroundColor: "#ffa500"
+        }
     },
     spacer: {
         margin: "40px",
     },
     card: {
         border: "solid 1px gray",
+        backgroundColor: "#000",
+    },
+    cardOverlay: {
+        position: "relative"
+    },
+    overlay: {
+        position: "absolute",
+        bottom: "50px",
+        left: "105px",
+        color: "#fff",
+        padding: "20px",
+        fontSize: "1.5em",
+        width: "350px",
+        borderRadius: "10px",
+        backgroundColor: "#000"
+    },
+    jumboButton: {
+        marginTop: "10px",
+        backgroundColor: "#ff7800",
+        fontSize: ".7em",
+        fontFamily: "Barlow Condensed",
+        "&:hover": {
+            backgroundColor: "#ffa500"
+        }
     },
     toolbar: theme.mixins.toolbar
 }));
@@ -51,12 +79,21 @@ function Home (props) {
                 <Grid container justify={"space-evenly"}>
                     <Grid item xs={12}>
                         <div className={classes.cardDiv}>
-                            <Card square={true}>
+                            <Card square={true} className={classes.cardOverlay}>
                                 <CardMedia
                                     className={classes.jumbotron}
                                     image={require("../images/workoutSplash.jpg")}
                                     title={"Workout Splash"}
                                 />
+                                <div className={classes.overlay}>
+                                    <Typography variant={"h3"} className={classes.cardText}>
+                                        Lorem ipsum
+                                    </Typography>
+                                    <Typography variant={"p"} className={classes.cardText}>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                    </Typography>
+                                    <Button className={classes.jumboButton}>Find out more <ChevronRightIcon/></Button>
+                                </div>
                             </Card>
                         </div>
                 </Grid>
@@ -70,6 +107,9 @@ function Home (props) {
                             <CardContent>
                                 <Typography className={classes.cardText} variant={"h4"}>
                                     SHOP MEN
+                                </Typography>
+                                <Typography className={classes.cardText} variant={"p"}>
+                                    Lorem ipsum dolor sit amet
                                 </Typography>
                             </CardContent>
                             <CardActions>
@@ -85,12 +125,15 @@ function Home (props) {
                                 title={"Shop Women"}
                             />
                             <CardContent>
-                                <Typography className={classes.cardText} align={"right"} variant={"h4"}>
+                                <Typography className={classes.cardText} variant={"h4"}>
                                     SHOP WOMEN
+                                </Typography>
+                                <Typography className={classes.cardText} variant={"p"}>
+                                    Lorem ipsum dolor sit amet
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button className={classes.buttonLeft + " " + classes.subtext} href={"/women"}>Find out more <ChevronRightIcon/></Button>
+                                <Button className={classes.subtext} href={"/women"}>Find out more <ChevronRightIcon/></Button>
                             </CardActions>
                         </Card>
                     </Grid>

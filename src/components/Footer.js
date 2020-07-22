@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
     icon: {
         display:"inline",
-        color: "#fff",
+        color: "#ff7800",
     },
     centerButtons: {
         margin:"auto"

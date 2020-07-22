@@ -20,10 +20,10 @@ const useStyles = makeStyles((theme) => ({
         height:600
     },
     cardMedia: {
-        height: 250
+        height: 400
     },
     cardDiv: {
-        marginBottom: "40px"
+        margin: "20px"
     },
     toolbar: theme.mixins.toolbar
 }));
@@ -34,12 +34,39 @@ function ShopMen (props) {
         <div>
             <NavBar/>
             <div className={classes.toolbar}/>
-            <Grid container justify={"space-evenly"}>
-                <Grid item xs={12}>
+            <Grid container justify={"center"}>
+                <Grid item xs={2}>
+                    <div className={classes.cardDiv}>
+                        
+                    </div>
+                </Grid>
+                <Grid item xs>
                     <div className={classes.cardDiv}>
                         <Card square={true}>
                             <CardMedia
-                                className={classes.jumbotron}
+                                className={classes.cardMedia}
+                                image={require("../images/workoutSplash.jpg")}
+                                title={"Workout Splash"}
+                            />
+                        </Card>
+                    </div>
+                </Grid>
+                <Grid item xs>
+                    <div className={classes.cardDiv}>
+                        <Card square={true}>
+                            <CardMedia
+                                className={classes.cardMedia}
+                                image={require("../images/workoutSplash.jpg")}
+                                title={"Workout Splash"}
+                            />
+                        </Card>
+                    </div>
+                </Grid>
+                <Grid item xs>
+                    <div className={classes.cardDiv}>
+                        <Card square={true}>
+                            <CardMedia
+                                className={classes.cardMedia}
                                 image={require("../images/workoutSplash.jpg")}
                                 title={"Workout Splash"}
                             />
