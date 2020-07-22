@@ -2,17 +2,12 @@ import React from 'react';
 import '../App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import { Paper, Toolbar, Button, ButtonGroup, Typography, Grid, Box } from '@material-ui/core';
-import { FitnessCenter } from '@material-ui/icons';
+import { FitnessCenter,Facebook,Twitter,Instagram } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-    },
-    menuButton: {
-        color: "#fff",
-        fontFamily: "Bebas Neue",
-        fontSize: '1.4em'
     },
     title: {
         display:"inline",
@@ -21,16 +16,35 @@ const useStyles = makeStyles((theme) => ({
     },
     footer: {
         backgroundColor: "#000",
+        padding:"5px 0px 10px 0px"
     },
     icon: {
         display:"inline",
         color: "#ff7800",
     },
-    centerButtons: {
-        margin:"auto"
+    footerList: {
+        color: "#ff7800",
+        listStyleType: "none",
+        fontFamily: "Barlow Condensed",
     },
-    rightButtons: {
-        marginLeft:"auto"
+    listTitle: {
+        fontSize:"1.5em",
+        fontFamily: "Bebas Neue",
+        color:"#fff"
+    },
+    footerTitle: {
+        color: "#ff7800",
+        marginTop:"8px"
+    },
+    copyright: {
+        color: "#ff7800",
+        fontFamily: "Barlow Condensed",
+    },
+    social: {
+        color: "#ff7800",
+        fontFamily: "Barlow Condensed",
+        margin: "auto",
+        fontSize: "1em"
     }
 }));
 
@@ -39,19 +53,44 @@ function Footer() {
     return (
         <div className={classes.root}>
             <Paper className={classes.footer} square={true}>
-                <Grid container>
-                    <Grid item xs={4}>
-                        <Button href={"/"}>
+                <Grid justify={"flex-start"} container>
+                    <Grid item xs={1}>
+
+                    </Grid>
+                    <Grid item xs={1}>
+                        <Button href={"/"} className={classes.footerTitle}>
                             <FitnessCenter className={classes.icon}/>
                             <Typography variant={"h5"} className={classes.title} >
                                 TRYACTIN
                             </Typography>
                         </Button>
                     </Grid>
-                    <Grid item xs={4}>
-
+                    <Grid item xs={1}>
+                        <ul className={classes.footerList}>
+                            <li className={classes.listTitle}>Help</li>
+                            <li>FAQ</li>
+                            <li>Contact Support</li>
+                        </ul>
+                    </Grid>
+                    <Grid item xs={7}>
+                        <ul className={classes.footerList}>
+                            <li className={classes.listTitle}>Account</li>
+                            <li>Account Home</li>
+                            <li>My Cart</li>
+                            <li>Payment Info</li>
+                        </ul>
+                    </Grid>
+                    <Grid item xs={1}>
+                        <ul className={classes.footerList}>
+                            <li><Button className={classes.social} href="https://www.facebook.com/"><Facebook/> Facebook</Button></li>
+                            <li><Button className={classes.social} href="https://www.twitter.com/"><Twitter/> Twitter</Button></li>
+                            <li><Button className={classes.social} href="https://www.instagram.com/"><Instagram/> Instagram</Button></li>
+                        </ul>
                     </Grid>
                 </Grid>
+                <div>
+                    <Typography variant={"body1"} align={"center"} className={classes.copyright}> Ut enim ad minim veniam | TRYACTIN Copyright 2020</Typography>
+                </div>
             </Paper>
         </div>
     );
