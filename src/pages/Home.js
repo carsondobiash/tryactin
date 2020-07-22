@@ -89,10 +89,10 @@ function Home (props) {
                                     <Typography variant={"h3"} className={classes.cardText}>
                                         Lorem ipsum
                                     </Typography>
-                                    <Typography variant={"p"} className={classes.cardText}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                    <Typography variant={"subtitle1"} className={classes.cardText}>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     </Typography>
-                                    <Button className={classes.jumboButton}>Find out more <ChevronRightIcon/></Button>
+                                    <Button className={classes.jumboButton}>Shop Now <ChevronRightIcon/></Button>
                                 </div>
                             </Card>
                         </div>
@@ -108,7 +108,7 @@ function Home (props) {
                                 <Typography className={classes.cardText} variant={"h4"}>
                                     SHOP MEN
                                 </Typography>
-                                <Typography className={classes.cardText} variant={"p"}>
+                                <Typography className={classes.cardText} variant={"subtitle1"}>
                                     Lorem ipsum dolor sit amet
                                 </Typography>
                             </CardContent>
@@ -128,7 +128,7 @@ function Home (props) {
                                 <Typography className={classes.cardText} variant={"h4"}>
                                     SHOP WOMEN
                                 </Typography>
-                                <Typography className={classes.cardText} variant={"p"}>
+                                <Typography className={classes.cardText} variant={"subtitle1"}>
                                     Lorem ipsum dolor sit amet
                                 </Typography>
                             </CardContent>

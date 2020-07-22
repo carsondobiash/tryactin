@@ -49,8 +49,8 @@ function NavBar() {
         <div className={classes.root}>
             <AppBar position="fixed" color="default" className={classes.nav}>
                 <Toolbar>
-                    <Grid container alignItems={"center"}>
-                        <Grid item xs={4} justify={"flex-start"}>
+                    <Grid container alignItems={"center"} justify={"flex-start"}>
+                        <Grid item xs={4}>
                             <Button href={"/"}>
                                 <FitnessCenter className={classes.titleIcon}/>
                                 <Typography variant={"h4"} className={classes.title} >
