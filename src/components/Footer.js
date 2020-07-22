@@ -41,10 +41,13 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Barlow Condensed",
     },
     social: {
-        color: "#ff7800",
+        color: "#fff",
         fontFamily: "Barlow Condensed",
         margin: "auto",
         fontSize: "1em"
+    },
+    socialIcon: {
+        color: "#ff7800"
     }
 }));
 
@@ -82,9 +85,9 @@ function Footer() {
                     </Grid>
                     <Grid item xs={1}>
                         <ul className={classes.footerList}>
-                            <li><Button className={classes.social} href="https://www.facebook.com/"><Facebook/> Facebook</Button></li>
-                            <li><Button className={classes.social} href="https://www.twitter.com/"><Twitter/> Twitter</Button></li>
-                            <li><Button className={classes.social} href="https://www.instagram.com/"><Instagram/> Instagram</Button></li>
+                            <li><Button className={classes.social} href="https://www.facebook.com/"><Facebook className={classes.socialIcon}/> Facebook</Button></li>
+                            <li><Button className={classes.social} href="https://www.twitter.com/"><Twitter className={classes.socialIcon}/> Twitter</Button></li>
+                            <li><Button className={classes.social} href="https://www.instagram.com/"><Instagram className={classes.socialIcon}/> Instagram</Button></li>
                         </ul>
                     </Grid>
                 </Grid>
