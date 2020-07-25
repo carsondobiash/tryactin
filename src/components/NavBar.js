@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Button, ButtonGroup, Typography, Grid, Box } from '@material-ui/core';
+import { AppBar, Toolbar, Button, ButtonGroup, Typography, Grid, Box, TextField, InputAdornment } from '@material-ui/core';
 import { FitnessCenter, AccountCircle, Search, ShoppingCart } from '@material-ui/icons';
 
 
@@ -40,6 +40,10 @@ const useStyles = makeStyles((theme) => ({
     },
     rightButtons: {
         marginLeft:"auto"
+    },
+    search: {
+        color: "#fff",
+        borderColor: "#fff"
     }
 }));
 
@@ -47,7 +51,7 @@ function NavBar() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <AppBar position="fixed" color="default" className={classes.nav}>
+            <AppBar position="fixed" className={classes.nav}>
                 <Toolbar>
                     <Grid container alignItems={"center"} justify={"flex-start"}>
                         <Grid item xs={4}>
@@ -58,14 +62,25 @@ function NavBar() {
                                 </Typography>
                             </Button>
                         </Grid>
-                        <Grid container item xs={4} justify={"center"}>
+                        <Grid container item xs justify={"center"}>
                             <Button className={classes.menuButton} disableElevation href={"/men"}>Mens</Button>
                             <Button className={classes.menuButton} disableElevation href={"/women"}>Womens</Button>
                             <Button className={classes.menuButton} disableElevation>Gear</Button>
                         </Grid>
                         <Grid container item xs={4} justify={"flex-end"}>
+                            <TextField
+                                variant={"outlined"}
+                                placeholder={"Search"}
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                          <Button><Search className={classes.icon} /></Button>
+                                        </InputAdornment>
+                                        ),
+                                    className: classes.search
+                                }}
+                                />
                             <ButtonGroup>
-                                <Button><Search className={classes.icon}/></Button>
                                 <Button href={"/account"}><AccountCircle className={classes.icon}/></Button>
                                 <Button href={"/cart"}><ShoppingCart className={classes.icon}/></Button>
                             </ButtonGroup>

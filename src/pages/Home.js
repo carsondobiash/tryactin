@@ -92,7 +92,7 @@ function Home (props) {
                                     <Typography variant={"subtitle1"} className={classes.cardText}>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     </Typography>
-                                    <Button className={classes.jumboButton}>Shop Now <ChevronRightIcon/></Button>
+                                    <Button className={classes.jumboButton}>Find out more <ChevronRightIcon/></Button>
                                 </div>
                             </Card>
                         </div>
@@ -113,7 +113,7 @@ function Home (props) {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button className={classes.subtext} href={"/men"}>Find out more <ChevronRightIcon/></Button>
+                                <Button className={classes.subtext} href={"/men"}>Shop Now <ChevronRightIcon/></Button>
                             </CardActions>
                         </Card>
                     </Grid>
@@ -133,7 +133,7 @@ function Home (props) {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button className={classes.subtext} href={"/women"}>Find out more <ChevronRightIcon/></Button>
+                                <Button className={classes.subtext} href={"/women"}>Shop Now <ChevronRightIcon/></Button>
                             </CardActions>
                         </Card>
                     </Grid>
