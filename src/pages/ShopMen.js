@@ -1,17 +1,17 @@
 import React from 'react';
 import '../App.css';
 import { withStyles } from '@material-ui/core/styles';
-import { Typography, Button, Grid, GridList, GridListTile, List, ListItem, ListItemText, Collapse, Divider, Checkbox } from '@material-ui/core';
+import { Typography, Button, Grid, GridList, GridListTile, List, ListItem, ListItemText, Collapse, Divider, Checkbox, Snackbar, SnackbarContent, IconButton } from '@material-ui/core';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { ExpandMore, ExpandLess, ShoppingCart } from '@material-ui/icons';
+import { ExpandMore, ExpandLess, ShoppingCart, Close } from '@material-ui/icons';
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Filter from "../components/Filter"
-import womenTile1 from '../images/womenTile1.jpg';
-import womenTile2 from '../images/womenTile2.jpg';
-import womenTile3 from '../images/womenTile3.jpg';
-import womenTile4 from '../images/womenTile4.jpg';
+import menProduct1 from '../images/menProduct1.jpg';
+import menProduct2 from '../images/menProduct2.jpg';
+import menProduct3 from '../images/menProduct3.jpg';
+import menProduct4 from '../images/menProduct4.jpg';
 import menTile1 from '../images/menTile1.jpg';
 import menTile2 from '../images/menTile2.jpg';
 import menTile3 from '../images/menTile3.jpg';
@@ -44,10 +44,12 @@ const useStyles = (theme) => ({
         backgroundColor: "#fff",
         color: "#000",
         position: "absolute",
-        top: "10px",
+        top: "25px",
         left: "80%",
-        borderRadius: "10px",
+        borderRadius: "25px",
+        padding: "10px",
         transition: "opacity .2s",
+        border: "1.5px solid black",
         "&:hover":{
             backgroundColor: "#E8E8E8",
         }
@@ -61,9 +63,6 @@ const useStyles = (theme) => ({
             "& $top": {
                 opacity: 1
             },
-            "& $bottom": {
-
-            }
         }
     },
     bottom: {
@@ -74,6 +73,10 @@ const useStyles = (theme) => ({
         transition: "opacity .2s",
         position:"absolute",
     },
+    snack: {
+        background: "#000",
+        color: "#fff",
+    },
     toolbar: theme.mixins.toolbar
 });
 
@@ -81,9 +84,9 @@ const imagesList = [
         {
             id: 0,
             img1: menTile1,
-            img2: womenTile1,
+            img2: menProduct1,
             title1: "Tile 1 image",
-            title2: "Tile 1 image",
+            title2: "Tile 1 product",
             cols: 1,
             size: "Small",
             color: "Black",
@@ -92,9 +95,9 @@ const imagesList = [
         {
             id: 1,
             img1: menTile2,
-            img2: womenTile2,
+            img2: menProduct2,
             title1: "Tile 2 image",
-            title2: "Tile 2 image",
+            title2: "Tile 2 product",
             cols: 1,
             size: "Medium",
             color: "Gray",
@@ -103,9 +106,9 @@ const imagesList = [
         {
             id: 2,
             img1: menTile3,
-            img2: womenTile3,
+            img2: menProduct3,
             title1: "Tile 3 image",
-            title2: "Tile 3 image",
+            title2: "Tile 3 product",
             cols: 1,
             size: "Large",
             color: "White",
@@ -114,46 +117,14 @@ const imagesList = [
         {
             id: 3,
             img1: menTile4,
-            img2: womenTile4,
+            img2: menProduct4,
             title1: "Tile 4 image",
-            title2: "Tile 4 image",
+            title2: "Tile 4 product",
             cols: 1,
             size: "Extra Large",
             color: "Brown",
             price: "$25-$50",
         },
-        // {
-        //     img: menTile1,
-        //     title: "Tile 1 image",
-        //     cols: 1,
-        //     size: "Small",
-        //     color: "Dark Blue",
-        //     price: "$25-$50",
-        // },
-        // {
-        //     img: menTile2,
-        //     title: "Tile 2 image",
-        //     cols: 1,
-        //     size: "Medium",
-        //     color: "Black",
-        //     price: "$0-$25",
-        // },
-        // {
-        //     img: menTile3,
-        //     title: "Tile 3 image",
-        //     cols: 1,
-        //     size: "Large",
-        //     color: "Gray",
-        //     price: "$0-$25",
-        // },
-        // {
-        //     img: menTile4,
-        //     title: "Tile 4 image",
-        //     cols: 1,
-        //     size: "Extra Large",
-        //     color: "Dark Gray",
-        //     price: "$25-$50",
-        // },
 ];
 
 class ShopMen extends React.Component {
@@ -163,6 +134,7 @@ class ShopMen extends React.Component {
         this.state = {
             images: imagesList,
             filters: [],
+            open: false
         }
         this.filter = this.filter.bind(this)
     }
@@ -185,6 +157,18 @@ class ShopMen extends React.Component {
         } else if(!e.target.checked) {
             console.log("unchecked " + e.target.value + " from " + e.target.name)
         }*/
+    }
+
+    handleClick = () => {
+        this.setState({open: true})
+    }
+
+    handleClose = (e, reason) => {
+        if(reason === 'clickaway') {
+            return;
+        }
+
+        this.setState({open: false})
     }
 
 
@@ -226,13 +210,34 @@ class ShopMen extends React.Component {
                                     <div className={classes.tile}>
                                         <img className={classes.bottom} src={tile.img1} alt={tile.title1} />
                                         <img className={classes.top} src={tile.img2} alt={tile.title2} />
-                                        <Button className={classes.cart}><ShoppingCart/></Button>
+                                        <Button onClick={this.handleClick} className={classes.cart}><ShoppingCart/></Button>
                                     </div>
                                 </GridListTile>
                             ))}
                             </GridList>
                         </Grid>
                     </Grid>
+                    <Snackbar
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'left'
+                        }}
+                        open={this.state.open}
+                        autoHideDuration={6000}
+                        onClose={this.handleClose}
+                        >
+                        <SnackbarContent
+                            className={classes.snack}
+                            message="Added to cart!"
+                            action={
+                              <React.Fragment>
+                                <IconButton size="small" aria-label="close" color="inherit" onClick={this.handleClose}>
+                                  <Close fontSize="small" />
+                                </IconButton>
+                              </React.Fragment>
+                            }
+                            />
+                    </Snackbar>
                 </div>
                 <Footer/>
             </div>
