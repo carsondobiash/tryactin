@@ -63,8 +63,8 @@ function NavBar() {
                             </Button>
                         </Grid>
                         <Grid container item xs justify={"center"}>
-                            <Button className={classes.menuButton} disableElevation href={"/men"}>Mens</Button>
-                            <Button className={classes.menuButton} disableElevation href={"/women"}>Womens</Button>
+                            <Button className={classes.menuButton} disableElevation href={"/men"}>Men</Button>
+                            <Button className={classes.menuButton} disableElevation href={"/women"}>Women</Button>
                             <Button className={classes.menuButton} disableElevation>Gear</Button>
                         </Grid>
                         <Grid container item xs={4} justify={"flex-end"}>
