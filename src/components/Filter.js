@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { withStyles } from '@material-ui/core/styles';
-import { Typography, Grid, List, ListItem, ListItemText, Collapse, Checkbox, FormControlLabel } from '@material-ui/core';
+import { List, ListItem, ListItemText, Collapse, Checkbox, FormControlLabel } from '@material-ui/core';
 import { ExpandMore, ExpandLess } from '@material-ui/icons';
 
 

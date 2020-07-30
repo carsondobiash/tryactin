@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { makeStyles } from '@material-ui/core/styles';
 import Home from "./pages/Home"
 import ShopWomen from "./pages/ShopWomen";
 import ShopMen from "./pages/ShopMen";
@@ -8,14 +7,7 @@ import Cart from "./pages/Cart";
 import Account from "./pages/Account";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  }
-}));
-
 function App() {
-  const classes = useStyles();
   return (
       <Router>
         <Switch>
