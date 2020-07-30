@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { makeStyles } from '@material-ui/core/styles';
-import { Paper, Toolbar, Button, ButtonGroup, Typography, Grid, Box } from '@material-ui/core';
+import { Paper, Button, Typography, Grid } from '@material-ui/core';
 import { FitnessCenter,Facebook,Twitter,Instagram } from '@material-ui/icons';
 
 

@@ -1,10 +1,8 @@
 import React from 'react';
 import '../App.css';
 import { withStyles } from '@material-ui/core/styles';
-import { Typography, Button, Grid, GridList, GridListTile, List, ListItem, ListItemText, Collapse, Divider, Checkbox, Snackbar, SnackbarContent, IconButton } from '@material-ui/core';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { ExpandMore, ExpandLess, ShoppingCart, Close } from '@material-ui/icons';
+import { Typography, Grid, List, Divider, Snackbar, SnackbarContent, IconButton } from '@material-ui/core';
+import { Close } from '@material-ui/icons';
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Filter from "../components/Filter";
@@ -32,13 +30,9 @@ const useStyles = (theme) => ({
     title: {
         marginBottom: "10px",
         fontFamily: "Bebas Neue",
-        // border: "#000 5px solid",
-        // backgroundColor: "#ff7800"
     },
     subtitle: {
         fontFamily: "Barlow Condensed",
-        // border: "#000 5px solid",
-        // backgroundColor: "#ff7800"
     },
     snack: {
         background: "#fff",
@@ -206,36 +200,9 @@ class ShopMen extends React.Component {
                                 </List>
                             </div>
                         </Grid>
-
-                        {/*<GridList cols={4} cellHeight={450} spacing={20}></GridList>*/}
                         <Grid container justify={"space-evenly"} xs>
                             {this.state.images.map((tile) => (
                                 <StoreCard key={tile.id} img1={tile.img1} img2={tile.img2} title={tile.title} price={tile.price} handleClick={this.handleClick}/>
-
-
-
-
-
-
-                                /*<GridListTile key={tile.img1} cols={tile.cols || 1} className={classes.tile}>
-                                    <div className={classes.innerTile}>
-                                        <div className={classes.images}>
-                                            <a href={"/"}>
-                                                <img className={classes.bottomImg} src={tile.img1} alt={tile.title} />
-                                                <img className={classes.topImg} src={tile.img2} alt={tile.title} />
-                                            </a>
-                                            <Button onClick={this.handleClick} className={classes.cart}><ShoppingCart/></Button>
-                                        </div>
-                                        <div className={classes.contentDiv}>
-                                                <Typography className={classes.content} variant={"h5"}>
-                                                    {tile.title}
-                                                </Typography>
-                                                <Typography className={classes.content} variant={"h6"}>
-                                                    {tile.price}
-                                                </Typography>
-                                        </div>
-                                    </div>
-                                </GridListTile>*/
                             ))}
                         </Grid>
                     </Grid>

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Button, ButtonGroup, Typography, Grid, Box, TextField, InputAdornment } from '@material-ui/core';
+import { AppBar, Toolbar, Button, ButtonGroup, Typography, Grid, TextField, InputAdornment } from '@material-ui/core';
 import { FitnessCenter, AccountCircle, Search, ShoppingCart } from '@material-ui/icons';
 
 
