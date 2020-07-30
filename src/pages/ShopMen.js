@@ -7,7 +7,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { ExpandMore, ExpandLess, ShoppingCart, Close } from '@material-ui/icons';
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import Filter from "../components/Filter"
+import Filter from "../components/Filter";
+import StoreCard from "../components/StoreCard"
 import menProduct1 from '../images/menProduct1.jpg';
 import menProduct2 from '../images/menProduct2.jpg';
 import menProduct3 from '../images/menProduct3.jpg';
@@ -39,43 +40,11 @@ const useStyles = (theme) => ({
         // border: "#000 5px solid",
         // backgroundColor: "#ff7800"
     },
-    cart: {
-        opacity: 0,
-        backgroundColor: "#fff",
-        color: "#000",
-        position: "absolute",
-        top: "25px",
-        left: "80%",
-        borderRadius: "25px",
-        padding: "10px",
-        transition: "opacity .2s",
-        border: "1.5px solid black",
-        "&:hover":{
-            backgroundColor: "#E8E8E8",
-        }
-    },
-    tile: {
-        position: "relative",
-        "&:hover":{
-            "& $cart": {
-                opacity: 1
-            },
-            "& $top": {
-                opacity: 1
-            },
-        }
-    },
-    bottom: {
-        position: "absolute",
-    },
-    top: {
-        opacity: 0,
-        transition: "opacity .2s",
-        position:"absolute",
-    },
     snack: {
-        background: "#000",
-        color: "#fff",
+        background: "#fff",
+        color: "#000",
+        fontFamily: "Barlow Condensed",
+        fontSize: "1.2em"
     },
     toolbar: theme.mixins.toolbar
 });
@@ -85,45 +54,81 @@ const imagesList = [
             id: 0,
             img1: menTile1,
             img2: menProduct1,
-            title1: "Tile 1 image",
-            title2: "Tile 1 product",
+            title: "Titans Hoodie",
             cols: 1,
             size: "Small",
             color: "Black",
-            price: "$50-$75",
+            price: "$50",
         },
         {
             id: 1,
             img1: menTile2,
             img2: menProduct2,
-            title1: "Tile 2 image",
-            title2: "Tile 2 product",
+            title: "Nike Tanktop",
             cols: 1,
             size: "Medium",
             color: "Gray",
-            price: "$0-$25",
+            price: "$10",
         },
         {
             id: 2,
             img1: menTile3,
             img2: menProduct3,
-            title1: "Tile 3 image",
-            title2: "Tile 3 product",
+            title: "Athleta Tanktop",
             cols: 1,
             size: "Large",
             color: "White",
-            price: "$0-$25",
+            price: "$15",
         },
         {
             id: 3,
             img1: menTile4,
             img2: menProduct4,
-            title1: "Tile 4 image",
-            title2: "Tile 4 product",
+            title: "Underarmour Shirt",
             cols: 1,
             size: "Extra Large",
             color: "Brown",
-            price: "$25-$50",
+            price: "$35",
+        },
+        {
+            id: 4,
+            img1: menTile4,
+            img2: menProduct4,
+            title: "Underarmour Shirt",
+            cols: 1,
+            size: "Extra Large",
+            color: "Brown",
+            price: "$35",
+        },
+        {
+            id: 5,
+            img1: menTile3,
+            img2: menProduct3,
+            title: "Athleta Tanktop",
+            cols: 1,
+            size: "Extra Large",
+            color: "Brown",
+            price: "$20",
+        },
+        {
+            id: 6,
+            img1: menTile2,
+            img2: menProduct2,
+            title: "Nike Tanktop",
+            cols: 1,
+            size: "Extra Large",
+            color: "Brown",
+            price: "$15",
+        },
+        {
+            id: 7,
+            img1: menTile1,
+            img2: menProduct1,
+            title: "Titans Hoodie",
+            cols: 1,
+            size: "Extra Large",
+            color: "Brown",
+            price: "$40",
         },
 ];
 
@@ -185,7 +190,7 @@ class ShopMen extends React.Component {
                     <div>
                         <Typography className={classes.title} align={"center"} variant={"h1"}>Men</Typography>
                     </div>
-                    <Grid container justify={"center"}>
+                    <Grid container justify={"flex-start"}>
                         <Grid item xs={2}>
                             <div className={classes.filters}>
                                 <Typography className={classes.subtitle} variant="h4">
@@ -202,19 +207,36 @@ class ShopMen extends React.Component {
                             </div>
                         </Grid>
 
-
-                        <Grid item xs>
-                            <GridList cols={4} cellHeight={450} spacing={20}>
+                        {/*<GridList cols={4} cellHeight={450} spacing={20}></GridList>*/}
+                        <Grid container justify={"space-evenly"} xs>
                             {this.state.images.map((tile) => (
-                                <GridListTile key={tile.img1} cols={tile.cols || 1} className={classes.tile}>
-                                    <div className={classes.tile}>
-                                        <img className={classes.bottom} src={tile.img1} alt={tile.title1} />
-                                        <img className={classes.top} src={tile.img2} alt={tile.title2} />
-                                        <Button onClick={this.handleClick} className={classes.cart}><ShoppingCart/></Button>
+                                <StoreCard key={tile.id} img1={tile.img1} img2={tile.img2} title={tile.title} price={tile.price} handleClick={this.handleClick}/>
+
+
+
+
+
+
+                                /*<GridListTile key={tile.img1} cols={tile.cols || 1} className={classes.tile}>
+                                    <div className={classes.innerTile}>
+                                        <div className={classes.images}>
+                                            <a href={"/"}>
+                                                <img className={classes.bottomImg} src={tile.img1} alt={tile.title} />
+                                                <img className={classes.topImg} src={tile.img2} alt={tile.title} />
+                                            </a>
+                                            <Button onClick={this.handleClick} className={classes.cart}><ShoppingCart/></Button>
+                                        </div>
+                                        <div className={classes.contentDiv}>
+                                                <Typography className={classes.content} variant={"h5"}>
+                                                    {tile.title}
+                                                </Typography>
+                                                <Typography className={classes.content} variant={"h6"}>
+                                                    {tile.price}
+                                                </Typography>
+                                        </div>
                                     </div>
-                                </GridListTile>
+                                </GridListTile>*/
                             ))}
-                            </GridList>
                         </Grid>
                     </Grid>
                     <Snackbar
